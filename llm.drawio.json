@@ -1,0 +1,41 @@
+[
+  {
+    "name": "main",
+    "children": [
+      {
+        "name": ":$ ./agency/main",
+        "id": 5
+      }
+    ],
+    "connections": [
+      {
+        "dir": 0,
+        "source_port": "",
+        "target_port": "",
+        "target": {
+          "name": ":$ ./agency/main",
+          "id": 5
+        }
+      },
+      {
+        "dir": 2,
+        "source_port": "",
+        "target_port": "md",
+        "source": {
+          "name": ":$ ./agency/main",
+          "id": 5
+        }
+      },
+      {
+        "dir": 2,
+        "source_port": "✗",
+        "target_port": "✗",
+        "source": {
+          "name": ":$ ./agency/main",
+          "id": 5
+        }
+      }
+    ],
+    "file": "llm.drawio"
+  }
+]
