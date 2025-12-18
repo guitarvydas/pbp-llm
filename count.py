@@ -9,7 +9,8 @@ def instantiate (reg, owner, name, arg, template_data):
     name_with_id = zd.gensymbol ("Count")
     return zd.make_leaf (name_with_id, owner, None, arg, handler)
 
-count = 0
+max = 3
+count = 1
 
 def reset_count ():
     global count
@@ -17,14 +18,12 @@ def reset_count ():
 
 def inc_count ():
     global count
-    if count == 0:
-        count = 1;
-    else:
-        count += 1
+    count += 1
 
 def handler (eh, mev):
     global count
-    if count == 0:
+    print (f'count handler count={count}', file=sys.stderr)
+    if count < max:
         inc_count ()
         zd.send (eh, "less", mev.datum.v, mev)
     else:

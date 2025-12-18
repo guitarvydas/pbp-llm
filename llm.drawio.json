@@ -3,11 +3,11 @@
     "name": "main",
     "children": [
       {
-        "name": "Through A",
+        "name": "TA",
         "id": 5
       },
       {
-        "name": "Through C",
+        "name": "TC",
         "id": 9
       },
       {
@@ -15,28 +15,44 @@
         "id": 13
       },
       {
-        "name": ":?rephrased",
+        "name": ":?=",
         "id": 18
       },
       {
-        "name": ":?answer",
+        "name": ":3",
         "id": 20
       },
       {
-        "name": ":?less",
-        "id": 22
-      },
-      {
-        "name": ":3",
-        "id": 24
+        "name": ":?=",
+        "id": 23
       },
       {
         "name": ":2",
-        "id": 27
+        "id": 25
+      },
+      {
+        "name": ":?=",
+        "id": 28
+      },
+      {
+        "name": ":4",
+        "id": 30
+      },
+      {
+        "name": ":?=",
+        "id": 33
       },
       {
         "name": ":1",
-        "id": 30
+        "id": 35
+      },
+      {
+        "name": ":?=",
+        "id": 38
+      },
+      {
+        "name": ":5",
+        "id": 40
       }
     ],
     "connections": [
@@ -45,8 +61,17 @@
         "source_port": "",
         "target_port": "",
         "target": {
-          "name": "Through A",
+          "name": "TA",
           "id": 5
+        }
+      },
+      {
+        "dir": 0,
+        "source_port": "",
+        "target_port": "",
+        "target": {
+          "name": ":1",
+          "id": 35
         }
       },
       {
@@ -54,7 +79,7 @@
         "source_port": "",
         "target_port": "",
         "source": {
-          "name": "Through A",
+          "name": "TA",
           "id": 5
         },
         "target": {
@@ -71,7 +96,7 @@
           "id": 13
         },
         "target": {
-          "name": "Through C",
+          "name": "TC",
           "id": 9
         }
       },
@@ -80,11 +105,11 @@
         "source_port": "",
         "target_port": "",
         "source": {
-          "name": "Through C",
+          "name": "TC",
           "id": 9
         },
         "target": {
-          "name": "Through A",
+          "name": "TA",
           "id": 5
         }
       },
@@ -94,36 +119,23 @@
         "target_port": "",
         "source": {
           "name": ":3",
-          "id": 24
+          "id": 20
         },
         "target": {
-          "name": ":?rephrased",
+          "name": ":?=",
           "id": 18
         }
       },
       {
         "dir": 1,
-        "source_port": "",
+        "source_port": "less",
         "target_port": "",
         "source": {
-          "name": "Through C",
-          "id": 9
+          "name": "Count",
+          "id": 13
         },
         "target": {
           "name": ":3",
-          "id": 24
-        }
-      },
-      {
-        "dir": 1,
-        "source_port": "",
-        "target_port": "",
-        "source": {
-          "name": ":1",
-          "id": 30
-        },
-        "target": {
-          "name": ":?answer",
           "id": 20
         }
       },
@@ -132,11 +144,37 @@
         "source_port": "",
         "target_port": "",
         "source": {
-          "name": "Through A",
-          "id": 5
+          "name": ":2",
+          "id": 25
         },
         "target": {
-          "name": ":1",
+          "name": ":?=",
+          "id": 23
+        }
+      },
+      {
+        "dir": 1,
+        "source_port": "",
+        "target_port": "",
+        "source": {
+          "name": ":4",
+          "id": 30
+        },
+        "target": {
+          "name": ":?=",
+          "id": 28
+        }
+      },
+      {
+        "dir": 1,
+        "source_port": "",
+        "target_port": "",
+        "source": {
+          "name": "TC",
+          "id": 9
+        },
+        "target": {
+          "name": ":4",
           "id": 30
         }
       },
@@ -145,25 +183,51 @@
         "source_port": "",
         "target_port": "",
         "source": {
-          "name": ":2",
-          "id": 27
+          "name": "TA",
+          "id": 5
         },
         "target": {
-          "name": ":?less",
-          "id": 22
+          "name": ":2",
+          "id": 25
         }
       },
       {
         "dir": 1,
-        "source_port": "less",
+        "source_port": "",
+        "target_port": "",
+        "source": {
+          "name": ":1",
+          "id": 35
+        },
+        "target": {
+          "name": ":?=",
+          "id": 33
+        }
+      },
+      {
+        "dir": 1,
+        "source_port": "",
+        "target_port": "",
+        "source": {
+          "name": ":5",
+          "id": 40
+        },
+        "target": {
+          "name": ":?=",
+          "id": 38
+        }
+      },
+      {
+        "dir": 1,
+        "source_port": "final",
         "target_port": "",
         "source": {
           "name": "Count",
           "id": 13
         },
         "target": {
-          "name": ":2",
-          "id": 27
+          "name": ":5",
+          "id": 40
         }
       },
       {
@@ -171,7 +235,7 @@
         "source_port": "✗",
         "target_port": "✗",
         "source": {
-          "name": "Through A",
+          "name": "TA",
           "id": 5
         }
       },
@@ -189,7 +253,7 @@
         "source_port": "✗",
         "target_port": "✗",
         "source": {
-          "name": "Through C",
+          "name": "TC",
           "id": 9
         }
       },
@@ -206,7 +270,111 @@
     "file": "llm.drawio"
   },
   {
-    "name": "Copy of main",
+    "name": "Annotated Copy of main",
+    "children": [
+      {
+        "name": "TA",
+        "id": 5
+      },
+      {
+        "name": "TC",
+        "id": 9
+      },
+      {
+        "name": "Count",
+        "id": 13
+      }
+    ],
+    "connections": [
+      {
+        "dir": 0,
+        "source_port": "",
+        "target_port": "",
+        "target": {
+          "name": "TA",
+          "id": 5
+        }
+      },
+      {
+        "dir": 1,
+        "source_port": "",
+        "target_port": "",
+        "source": {
+          "name": "TA",
+          "id": 5
+        },
+        "target": {
+          "name": "Count",
+          "id": 13
+        }
+      },
+      {
+        "dir": 1,
+        "source_port": "less",
+        "target_port": "",
+        "source": {
+          "name": "Count",
+          "id": 13
+        },
+        "target": {
+          "name": "TC",
+          "id": 9
+        }
+      },
+      {
+        "dir": 1,
+        "source_port": "",
+        "target_port": "",
+        "source": {
+          "name": "TC",
+          "id": 9
+        },
+        "target": {
+          "name": "TA",
+          "id": 5
+        }
+      },
+      {
+        "dir": 2,
+        "source_port": "✗",
+        "target_port": "✗",
+        "source": {
+          "name": "TA",
+          "id": 5
+        }
+      },
+      {
+        "dir": 2,
+        "source_port": "final",
+        "target_port": "md",
+        "source": {
+          "name": "Count",
+          "id": 13
+        }
+      },
+      {
+        "dir": 2,
+        "source_port": "✗",
+        "target_port": "✗",
+        "source": {
+          "name": "TC",
+          "id": 9
+        }
+      },
+      {
+        "dir": 2,
+        "source_port": "✗",
+        "target_port": "✗",
+        "source": {
+          "name": "Count",
+          "id": 13
+        }
+      }
+    ],
+    "file": "llm.drawio"
+  },
+  {
+    "name": "main with LLM",
     "children": [
       {
         "name": ":$ ./agency/main",
@@ -219,30 +387,6 @@
       {
         "name": "Count",
         "id": 13
-      },
-      {
-        "name": ":?rephrased",
-        "id": 18
-      },
-      {
-        "name": ":?answer",
-        "id": 20
-      },
-      {
-        "name": ":?less",
-        "id": 22
-      },
-      {
-        "name": ":3",
-        "id": 24
-      },
-      {
-        "name": ":2",
-        "id": 27
-      },
-      {
-        "name": ":1",
-        "id": 30
       }
     ],
     "connections": [
@@ -292,84 +436,6 @@
         "target": {
           "name": ":$ ./agency/main",
           "id": 5
-        }
-      },
-      {
-        "dir": 1,
-        "source_port": "",
-        "target_port": "",
-        "source": {
-          "name": ":3",
-          "id": 24
-        },
-        "target": {
-          "name": ":?rephrased",
-          "id": 18
-        }
-      },
-      {
-        "dir": 1,
-        "source_port": "",
-        "target_port": "",
-        "source": {
-          "name": "Rephrase Answer as Yet Another Question",
-          "id": 9
-        },
-        "target": {
-          "name": ":3",
-          "id": 24
-        }
-      },
-      {
-        "dir": 1,
-        "source_port": "",
-        "target_port": "",
-        "source": {
-          "name": ":1",
-          "id": 30
-        },
-        "target": {
-          "name": ":?answer",
-          "id": 20
-        }
-      },
-      {
-        "dir": 1,
-        "source_port": "",
-        "target_port": "",
-        "source": {
-          "name": ":$ ./agency/main",
-          "id": 5
-        },
-        "target": {
-          "name": ":1",
-          "id": 30
-        }
-      },
-      {
-        "dir": 1,
-        "source_port": "",
-        "target_port": "",
-        "source": {
-          "name": ":2",
-          "id": 27
-        },
-        "target": {
-          "name": ":?less",
-          "id": 22
-        }
-      },
-      {
-        "dir": 1,
-        "source_port": "less",
-        "target_port": "",
-        "source": {
-          "name": "Count",
-          "id": 13
-        },
-        "target": {
-          "name": ":2",
-          "id": 27
         }
       },
       {
@@ -516,7 +582,7 @@
     "file": "llm.drawio"
   },
   {
-    "name": "Through A",
+    "name": "TA",
     "children": [],
     "connections": [
       {
@@ -528,7 +594,7 @@
     "file": "llm.drawio"
   },
   {
-    "name": "Through C",
+    "name": "TC",
     "children": [],
     "connections": [
       {

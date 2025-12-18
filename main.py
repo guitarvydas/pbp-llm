@@ -8,6 +8,5 @@ import count
 count.install (palette)
 top = zd.start_bare (part_name=sys.argv[3], palette=palette, env=env)
 zd.inject (top, "", sys.argv[2])
-zd.inject (top, "", sys.argv[2])
 zd.finalize (top)
 
