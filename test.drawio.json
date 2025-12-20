@@ -1,0 +1,59 @@
+[
+  {
+    "name": "main",
+    "children": [
+      {
+        "name": "TA",
+        "id": 5
+      },
+      {
+        "name": "TC",
+        "id": 9
+      },
+      {
+        "name": "Count",
+        "id": 13
+      },
+      {
+        "name": ":5",
+        "id": 18
+      }
+    ],
+    "connections": [
+      {
+        "dir": 0,
+        "source_port": "",
+        "target_port": "",
+        "target": {
+          "name": ":5",
+          "id": 18
+        }
+      }
+    ],
+    "file": "test.drawio"
+  },
+  {
+    "name": "TA",
+    "children": [],
+    "connections": [
+      {
+        "dir": 3,
+        "source_port": "",
+        "target_port": ""
+      }
+    ],
+    "file": "test.drawio"
+  },
+  {
+    "name": "TC",
+    "children": [],
+    "connections": [
+      {
+        "dir": 3,
+        "source_port": "",
+        "target_port": ""
+      }
+    ],
+    "file": "test.drawio"
+  }
+]

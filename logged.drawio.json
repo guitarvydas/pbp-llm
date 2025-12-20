@@ -1,18 +1,22 @@
 [
   {
-    "name": "main",
+    "name": "logged",
     "children": [
       {
-        "name": ":$ ./agency/main",
-        "id": 5
+        "name": "OpenAI",
+        "id": 6
       },
       {
         "name": "Rephrase Answer as Yet Another Question",
-        "id": 9
+        "id": 10
       },
       {
         "name": "Count",
-        "id": 13
+        "id": 14
+      },
+      {
+        "name": "Log Intermediate Rephrasing",
+        "id": 19
       }
     ],
     "connections": [
@@ -21,8 +25,8 @@
         "source_port": "",
         "target_port": "",
         "target": {
-          "name": ":$ ./agency/main",
-          "id": 5
+          "name": "OpenAI",
+          "id": 6
         }
       },
       {
@@ -30,12 +34,12 @@
         "source_port": "",
         "target_port": "",
         "source": {
-          "name": ":$ ./agency/main",
-          "id": 5
+          "name": "OpenAI",
+          "id": 6
         },
         "target": {
           "name": "Count",
-          "id": 13
+          "id": 14
         }
       },
       {
@@ -44,11 +48,11 @@
         "target_port": "",
         "source": {
           "name": "Count",
-          "id": 13
+          "id": 14
         },
         "target": {
           "name": "Rephrase Answer as Yet Another Question",
-          "id": 9
+          "id": 10
         }
       },
       {
@@ -57,11 +61,24 @@
         "target_port": "",
         "source": {
           "name": "Rephrase Answer as Yet Another Question",
-          "id": 9
+          "id": 10
         },
         "target": {
-          "name": ":$ ./agency/main",
-          "id": 5
+          "name": "OpenAI",
+          "id": 6
+        }
+      },
+      {
+        "dir": 1,
+        "source_port": "",
+        "target_port": "",
+        "source": {
+          "name": "Rephrase Answer as Yet Another Question",
+          "id": 10
+        },
+        "target": {
+          "name": "Log Intermediate Rephrasing",
+          "id": 19
         }
       },
       {
@@ -69,8 +86,8 @@
         "source_port": "✗",
         "target_port": "✗",
         "source": {
-          "name": ":$ ./agency/main",
-          "id": 5
+          "name": "OpenAI",
+          "id": 6
         }
       },
       {
@@ -79,7 +96,7 @@
         "target_port": "md",
         "source": {
           "name": "Count",
-          "id": 13
+          "id": 14
         }
       },
       {
@@ -88,7 +105,7 @@
         "target_port": "✗",
         "source": {
           "name": "Rephrase Answer as Yet Another Question",
-          "id": 9
+          "id": 10
         }
       },
       {
@@ -97,11 +114,20 @@
         "target_port": "✗",
         "source": {
           "name": "Count",
-          "id": 13
+          "id": 14
+        }
+      },
+      {
+        "dir": 2,
+        "source_port": "",
+        "target_port": "0.md",
+        "source": {
+          "name": "Log Intermediate Rephrasing",
+          "id": 19
         }
       }
     ],
-    "file": "llm.drawio"
+    "file": "logged.drawio"
   },
   {
     "name": "Rephrase Answer as Yet Another Question",
@@ -111,11 +137,11 @@
         "id": 5
       },
       {
-        "name": ":Rephrase each issue as a concise question ; ask for concise answers",
+        "name": ":Rephrase each issue as a concise question ; ask for concise answers ;",
         "id": 11
       },
       {
-        "name": ":$ ./agency/main",
+        "name": "OpenAI",
         "id": 14
       }
     ],
@@ -134,7 +160,7 @@
         "source_port": "",
         "target_port": "",
         "target": {
-          "name": ":Rephrase each issue as a concise question ; ask for concise answers",
+          "name": ":Rephrase each issue as a concise question ; ask for concise answers ;",
           "id": 11
         }
       },
@@ -143,7 +169,7 @@
         "source_port": "",
         "target_port": "1",
         "source": {
-          "name": ":Rephrase each issue as a concise question ; ask for concise answers",
+          "name": ":Rephrase each issue as a concise question ; ask for concise answers ;",
           "id": 11
         },
         "target": {
@@ -160,7 +186,7 @@
           "id": 5
         },
         "target": {
-          "name": ":$ ./agency/main",
+          "name": "OpenAI",
           "id": 14
         }
       },
@@ -169,7 +195,7 @@
         "source_port": "",
         "target_port": "reset",
         "source": {
-          "name": ":$ ./agency/main",
+          "name": "OpenAI",
           "id": 14
         },
         "target": {
@@ -191,7 +217,7 @@
         "source_port": "✗",
         "target_port": "✗",
         "source": {
-          "name": ":$ ./agency/main",
+          "name": "OpenAI",
           "id": 14
         }
       },
@@ -200,11 +226,106 @@
         "source_port": "",
         "target_port": "",
         "source": {
-          "name": ":$ ./agency/main",
+          "name": "OpenAI",
           "id": 14
         }
       }
     ],
-    "file": "llm.drawio"
+    "file": "logged.drawio"
+  },
+  {
+    "name": "Log Intermediate Rephrasing",
+    "children": [
+      {
+        "name": ":~~---~~",
+        "id": 4
+      },
+      {
+        "name": "Replace NLs",
+        "id": 9
+      }
+    ],
+    "connections": [
+      {
+        "dir": 0,
+        "source_port": "",
+        "target_port": "",
+        "target": {
+          "name": ":~~---~~",
+          "id": 4
+        }
+      },
+      {
+        "dir": 0,
+        "source_port": "",
+        "target_port": "",
+        "target": {
+          "name": "Replace NLs",
+          "id": 9
+        }
+      },
+      {
+        "dir": 1,
+        "source_port": "",
+        "target_port": "",
+        "source": {
+          "name": ":~~---~~",
+          "id": 4
+        },
+        "target": {
+          "name": "Replace NLs",
+          "id": 9
+        }
+      },
+      {
+        "dir": 2,
+        "source_port": "",
+        "target_port": "",
+        "source": {
+          "name": "Replace NLs",
+          "id": 9
+        }
+      }
+    ],
+    "file": "logged.drawio"
+  },
+  {
+    "name": "OpenAI",
+    "children": [
+      {
+        "name": ":$ ./agency/main",
+        "id": 5
+      }
+    ],
+    "connections": [
+      {
+        "dir": 0,
+        "source_port": "",
+        "target_port": "",
+        "target": {
+          "name": ":$ ./agency/main",
+          "id": 5
+        }
+      },
+      {
+        "dir": 2,
+        "source_port": "",
+        "target_port": "",
+        "source": {
+          "name": ":$ ./agency/main",
+          "id": 5
+        }
+      },
+      {
+        "dir": 2,
+        "source_port": "✗",
+        "target_port": "✗",
+        "source": {
+          "name": ":$ ./agency/main",
+          "id": 5
+        }
+      }
+    ],
+    "file": "logged.drawio"
   }
 ]
