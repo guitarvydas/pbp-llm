@@ -1,6 +1,6 @@
 [
   {
-    "name": "main",
+    "name": "main-stubbed-out",
     "children": [
       {
         "name": "TA",
@@ -374,7 +374,7 @@
     "file": "llm.drawio"
   },
   {
-    "name": "main with LLM",
+    "name": "main",
     "children": [
       {
         "name": ":$ ./agency/main",
@@ -485,7 +485,7 @@
         "id": 5
       },
       {
-        "name": ":Rephrase as a concise question",
+        "name": ":Rephrase each issue as a concise question ; ask for concise answers",
         "id": 11
       },
       {
@@ -508,7 +508,7 @@
         "source_port": "",
         "target_port": "",
         "target": {
-          "name": ":Rephrase as a concise question",
+          "name": ":Rephrase each issue as a concise question ; ask for concise answers",
           "id": 11
         }
       },
@@ -517,7 +517,7 @@
         "source_port": "",
         "target_port": "1",
         "source": {
-          "name": ":Rephrase as a concise question",
+          "name": ":Rephrase each issue as a concise question ; ask for concise answers",
           "id": 11
         },
         "target": {
