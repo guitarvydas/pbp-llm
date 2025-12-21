@@ -702,7 +702,7 @@ function inject (part,port,payload) {                  /* line 686 */
       let  d =  new Datum ();                          /* line 688 */;
       d.v =  payload;                                  /* line 689 */
       d.clone =  function () {return obj_clone ( d)    /* line 690 */;};
-      d.reclaim =  None;                               /* line 691 */
+      d.reclaim =  null;                               /* line 691 */
       let  mev = make_mevent ( port, d)                /* line 692 */;
       inject_mevent ( part, mev)                       /* line 693 */
     }

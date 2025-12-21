@@ -864,7 +864,7 @@ x))))
         (declare (ignorable  d))
         (setf (slot-value  d 'v)  payload)                  #|line 689|#
         (setf (slot-value  d 'clone)  #'(lambda (&optional )(funcall (quote obj_clone)   d  #|line 690|#)))
-        (setf (slot-value  d 'reclaim)  None)               #|line 691|#
+        (setf (slot-value  d 'reclaim)  nil)                #|line 691|#
         (let (( mev (funcall (quote make_mevent)   port  d  #|line 692|#)))
           (declare (ignorable  mev))
           (funcall (quote inject_mevent)   part  mev        #|line 693|#)))
