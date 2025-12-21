@@ -1085,7 +1085,7 @@ function handle_external (eh,mev) {                    /* line 1 */
     }                                                  /* line 12 *//* line 13 */
 }
 
-function probe_handler (eh,s,mev) {                    /* line 14 */
+function probe_handler (eh,str,mev) {                  /* line 14 */
     let s =  mev.datum.v;                              /* line 15 */
     live_update ( "Info",  ( "  @".toString ()+  (`${ ticktime}`.toString ()+  ( "  ".toString ()+  ( "probe ".toString ()+  ( eh.name.toString ()+  ( ": ".toString ()+ `${ s}`.toString ()) .toString ()) .toString ()) .toString ()) .toString ()) .toString ()) )/* line 23 *//* line 24 *//* line 25 */
 }
