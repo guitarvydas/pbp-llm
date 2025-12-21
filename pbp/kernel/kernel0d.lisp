@@ -1283,8 +1283,8 @@ x))))
           (funcall (quote send)   eh  ""  (subseq  s 1)  mev  #|line 10|#) #|line 11|#
           ))))                                              #|line 12|#
   )
-(defun probe_handler (&optional  eh  str  mev)
-  (declare (ignorable  eh  str  mev))                       #|line 14|#
+(defun probe_handler (&optional  eh  strarg  mev)
+  (declare (ignorable  eh  strarg  mev))                    #|line 14|#
   (let ((s (slot-value (slot-value  mev 'datum) 'v)))
     (declare (ignorable s))                                 #|line 15|#
     (live_update  "Info"  (concatenate 'string  "  @"  (concatenate 'string (format nil "~a"  ticktime)  (concatenate 'string  "  "  (concatenate 'string  "probe "  (concatenate 'string (slot-value  eh 'name)  (concatenate 'string  ": " (format nil "~a"  s)))))))) #|line 23|#) #|line 24|#

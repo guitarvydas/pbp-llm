@@ -901,7 +901,7 @@ def handle_external (eh,mev):                          #line 1
         # just a string, send it out                   #line 9
         send ( eh, "",  s[1:] , mev)                   #line 10#line 11#line 12#line 13
 
-def probe_handler (eh,str,mev):                        #line 14
+def probe_handler (eh,strarg,mev):                     #line 14
     s =  mev.datum.v                                   #line 15
     live_update ( "Info",  str( "  @") +  str(str ( ticktime)) +  str( "  ") +  str( "probe ") +  str( eh.name) +  str( ": ") + str ( s)      )#line 23#line 24#line 25
 
