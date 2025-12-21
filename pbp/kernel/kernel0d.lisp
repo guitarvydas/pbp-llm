@@ -721,8 +721,8 @@ x))))
   ) #|  Sends a mevent on the given `port` with `data`, placing it on the output |# #|line 559|# #|  of the given component. |# #|line 560|# #|line 561|#
 (defun send (&optional  eh  port  obj  causingMevent)
   (declare (ignorable  eh  port  obj  causingMevent))       #|line 562|#
-  (let (( d (funcall (quote Datum) )))
-    (declare (ignorable  d))                                #|line 563|#
+  (let (( d  (make-instance 'Datum)                         #|line 563|#))
+    (declare (ignorable  d))
     (setf (slot-value  d 'v)  obj)                          #|line 564|#
     (setf (slot-value  d 'clone)  #'(lambda (&optional )(funcall (quote obj_clone)   d  #|line 565|#)))
     (setf (slot-value  d 'reclaim)  None)                   #|line 566|#
@@ -860,8 +860,8 @@ x))))
   (declare (ignorable  part  port  payload))                #|line 686|#
   (cond
     ((not  load_errors)                                     #|line 687|#
-      (let (( d (funcall (quote Datum) )))
-        (declare (ignorable  d))                            #|line 688|#
+      (let (( d  (make-instance 'Datum)                     #|line 688|#))
+        (declare (ignorable  d))
         (setf (slot-value  d 'v)  payload)                  #|line 689|#
         (setf (slot-value  d 'clone)  #'(lambda (&optional )(funcall (quote obj_clone)   d  #|line 690|#)))
         (setf (slot-value  d 'reclaim)  None)               #|line 691|#
@@ -879,8 +879,8 @@ x))))
   )
 (defun new_datum_bang (&optional )
   (declare (ignorable ))                                    #|line 703|#
-  (let (( d (funcall (quote Datum) )))
-    (declare (ignorable  d))                                #|line 704|#
+  (let (( d  (make-instance 'Datum)                         #|line 704|#))
+    (declare (ignorable  d))
     (setf (slot-value  d 'v)  "!")                          #|line 705|#
     (setf (slot-value  d 'clone)  #'(lambda (&optional )(funcall (quote obj_clone)   d  #|line 706|#)))
     (setf (slot-value  d 'reclaim)  None)                   #|line 707|#

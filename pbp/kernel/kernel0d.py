@@ -509,7 +509,7 @@ def make_leaf (name,owner,container,arg,handler):      #line 542
 # Sends a mevent on the given `port` with `data`, placing it on the output#line 559
 # of the given component.                              #line 560#line 561
 def send (eh,port,obj,causingMevent):                  #line 562
-    d = Datum ()                                       #line 563
+    d =  Datum ()                                      #line 563
     d.v =  obj                                         #line 564
     d.clone =  lambda : obj_clone ( d)                 #line 565
     d.reclaim =  None                                  #line 566
@@ -605,7 +605,7 @@ def start_bare (part_name,palette,env):                #line 671
 
 def inject (part,port,payload):                        #line 686
     if not  load_errors:                               #line 687
-        d = Datum ()                                   #line 688
+        d =  Datum ()                                  #line 688
         d.v =  payload                                 #line 689
         d.clone =  lambda : obj_clone ( d)             #line 690
         d.reclaim =  None                              #line 691
@@ -618,7 +618,7 @@ def finalize (part):                                   #line 699
     print (deque_to_json ( part.outq))                 #line 700#line 701#line 702
 
 def new_datum_bang ():                                 #line 703
-    d = Datum ()                                       #line 704
+    d =  Datum ()                                      #line 704
     d.v =  "!"                                         #line 705
     d.clone =  lambda : obj_clone ( d)                 #line 706
     d.reclaim =  None                                  #line 707

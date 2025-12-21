@@ -585,7 +585,7 @@ function make_leaf (name,owner,container,arg,handler) {/* line 542 */
 /*  Sends a mevent on the given `port` with `data`, placing it on the output *//* line 559 */
 /*  of the given component. */                         /* line 560 *//* line 561 */
 function send (eh,port,obj,causingMevent) {            /* line 562 */
-    let  d = Datum ();                                 /* line 563 */
+    let  d =  new Datum ();                            /* line 563 */;
     d.v =  obj;                                        /* line 564 */
     d.clone =  function () {return obj_clone ( d)      /* line 565 */;};
     d.reclaim =  None;                                 /* line 566 */
@@ -699,7 +699,7 @@ function start_bare (part_name,palette,env) {          /* line 671 */
 
 function inject (part,port,payload) {                  /* line 686 */
     if ((!  load_errors)) {                            /* line 687 */
-      let  d = Datum ();                               /* line 688 */
+      let  d =  new Datum ();                          /* line 688 */;
       d.v =  payload;                                  /* line 689 */
       d.clone =  function () {return obj_clone ( d)    /* line 690 */;};
       d.reclaim =  None;                               /* line 691 */
@@ -716,7 +716,7 @@ function finalize (part) {                             /* line 699 */
 }
 
 function new_datum_bang () {                           /* line 703 */
-    let  d = Datum ();                                 /* line 704 */
+    let  d =  new Datum ();                            /* line 704 */;
     d.v =  "!";                                        /* line 705 */
     d.clone =  function () {return obj_clone ( d)      /* line 706 */;};
     d.reclaim =  None;                                 /* line 707 */
