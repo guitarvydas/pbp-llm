@@ -565,7 +565,7 @@ function make_container (name,owner) {                 /* line 528 */
 
 /*  Creates a new leaf component out of a handler function, and a data parameter *//* line 539 */
 /*  that will be passed back to your handler when called. *//* line 540 *//* line 541 */
-function make_leaf (name,owner,container,arg,handler) {/* line 542 */
+function make_leaf (name,owner,instance_data,arg,handler) {/* line 542 */
     let  eh =  new Eh ();                              /* line 543 */;
     let  nm =  "";                                     /* line 544 */
     if ( null!= owner) {                               /* line 545 */
@@ -575,7 +575,7 @@ function make_leaf (name,owner,container,arg,handler) {/* line 542 */
     eh.owner =  owner;                                 /* line 549 */
     eh.handler =  handler;                             /* line 550 */
     eh.finject =  injector;                            /* line 551 */
-    eh.instance_data =  container;                     /* line 552 */
+    eh.instance_data =  instance_data;                 /* line 552 */
     eh.arg =  arg;                                     /* line 553 */
     eh.state =  "idle";                                /* line 554 */
     eh.kind =  "leaf";                                 /* line 555 */
@@ -1033,7 +1033,7 @@ class BlockOnErrorState {
   }
 }
                                                        /* line 253 */
-function blockOnError_instantiate (reg,owner,name,template_data) {/* line 254 */
+function blockOnError_instantiate (reg,owner,name,template_data,arg) {/* line 254 */
     let name_with_id = gensymbol ( "blockOnError")     /* line 255 */;
     let instp =  new BlockOnErrorState ();             /* line 256 */;
     return make_leaf ( name_with_id, owner, instp, blockOnError_handler)/* line 257 */;/* line 258 *//* line 259 */
@@ -1085,7 +1085,7 @@ function handle_external (eh,mev) {                    /* line 1 */
     }                                                  /* line 12 *//* line 13 */
 }
 
-function probe_handler (eh,strarg,mev) {               /* line 14 */
+function probe_handler (eh,tag,mev) {                  /* line 14 */
     let s =  mev.datum.v;                              /* line 15 */
     live_update ( "Info",  ( "  @".toString ()+  (`${ ticktime}`.toString ()+  ( "  ".toString ()+  ( "probe ".toString ()+  ( eh.name.toString ()+  ( ": ".toString ()+ `${ s}`.toString ()) .toString ()) .toString ()) .toString ()) .toString ()) .toString ()) )/* line 23 *//* line 24 *//* line 25 */
 }

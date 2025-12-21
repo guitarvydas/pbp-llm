@@ -699,8 +699,8 @@ x))))
     (setf (slot-value  eh 'kind)  "container")              #|line 535|#
     (return-from make_container  eh)                        #|line 536|#) #|line 537|#
   ) #|  Creates a new leaf component out of a handler function, and a data parameter |# #|line 539|# #|  that will be passed back to your handler when called. |# #|line 540|# #|line 541|#
-(defun make_leaf (&optional  name  owner  container  arg  handler)
-  (declare (ignorable  name  owner  container  arg  handler)) #|line 542|#
+(defun make_leaf (&optional  name  owner  instance_data  arg  handler)
+  (declare (ignorable  name  owner  instance_data  arg  handler)) #|line 542|#
   (let (( eh  (make-instance 'Eh)                           #|line 543|#))
     (declare (ignorable  eh))
     (let (( nm  ""))
@@ -713,7 +713,7 @@ x))))
       (setf (slot-value  eh 'owner)  owner)                 #|line 549|#
       (setf (slot-value  eh 'handler)  handler)             #|line 550|#
       (setf (slot-value  eh 'finject)  #'injector)          #|line 551|#
-      (setf (slot-value  eh 'instance_data)  container)     #|line 552|#
+      (setf (slot-value  eh 'instance_data)  instance_data) #|line 552|#
       (setf (slot-value  eh 'arg)  arg)                     #|line 553|#
       (setf (slot-value  eh 'state)  "idle")                #|line 554|#
       (setf (slot-value  eh 'kind)  "leaf")                 #|line 555|#
@@ -1224,8 +1224,8 @@ x))))
     (hasError :accessor hasError :initarg :hasError :initform  "no")  #|line 251|#)) #|line 252|#
 
                                                             #|line 253|#
-(defun blockOnError_instantiate (&optional  reg  owner  name  template_data)
-  (declare (ignorable  reg  owner  name  template_data))    #|line 254|#
+(defun blockOnError_instantiate (&optional  reg  owner  name  template_data  arg)
+  (declare (ignorable  reg  owner  name  template_data  arg)) #|line 254|#
   (let ((name_with_id (funcall (quote gensymbol)   "blockOnError"  #|line 255|#)))
     (declare (ignorable name_with_id))
     (let ((instp  (make-instance 'BlockOnErrorState)        #|line 256|#))
@@ -1283,8 +1283,8 @@ x))))
           (funcall (quote send)   eh  ""  (subseq  s 1)  mev  #|line 10|#) #|line 11|#
           ))))                                              #|line 12|#
   )
-(defun probe_handler (&optional  eh  strarg  mev)
-  (declare (ignorable  eh  strarg  mev))                    #|line 14|#
+(defun probe_handler (&optional  eh  tag  mev)
+  (declare (ignorable  eh  tag  mev))                       #|line 14|#
   (let ((s (slot-value (slot-value  mev 'datum) 'v)))
     (declare (ignorable s))                                 #|line 15|#
     (live_update  "Info"  (concatenate 'string  "  @"  (concatenate 'string (format nil "~a"  ticktime)  (concatenate 'string  "  "  (concatenate 'string  "probe "  (concatenate 'string (slot-value  eh 'name)  (concatenate 'string  ": " (format nil "~a"  s)))))))) #|line 23|#) #|line 24|#

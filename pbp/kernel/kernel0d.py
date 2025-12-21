@@ -491,7 +491,7 @@ def make_container (name,owner):                       #line 528
 
 # Creates a new leaf component out of a handler function, and a data parameter#line 539
 # that will be passed back to your handler when called.#line 540#line 541
-def make_leaf (name,owner,container,arg,handler):      #line 542
+def make_leaf (name,owner,instance_data,arg,handler):  #line 542
     eh =  Eh ()                                        #line 543
     nm =  ""                                           #line 544
     if  None!= owner:                                  #line 545
@@ -500,7 +500,7 @@ def make_leaf (name,owner,container,arg,handler):      #line 542
     eh.owner =  owner                                  #line 549
     eh.handler =  handler                              #line 550
     eh.finject =  injector                             #line 551
-    eh.instance_data =  container                      #line 552
+    eh.instance_data =  instance_data                  #line 552
     eh.arg =  arg                                      #line 553
     eh.state =  "idle"                                 #line 554
     eh.kind =  "leaf"                                  #line 555
@@ -860,7 +860,7 @@ class BlockOnErrorState:
     def __init__ (self,):                              #line 250
         self.hasError =  "no"                          #line 251#line 252
                                                        #line 253
-def blockOnError_instantiate (reg,owner,name,template_data):#line 254
+def blockOnError_instantiate (reg,owner,name,template_data,arg):#line 254
     name_with_id = gensymbol ( "blockOnError")         #line 255
     instp =  BlockOnErrorState ()                      #line 256
     return make_leaf ( name_with_id, owner, instp, blockOnError_handler)#line 257#line 258#line 259
@@ -901,7 +901,7 @@ def handle_external (eh,mev):                          #line 1
         # just a string, send it out                   #line 9
         send ( eh, "",  s[1:] , mev)                   #line 10#line 11#line 12#line 13
 
-def probe_handler (eh,strarg,mev):                     #line 14
+def probe_handler (eh,tag,mev):                        #line 14
     s =  mev.datum.v                                   #line 15
     live_update ( "Info",  str( "  @") +  str(str ( ticktime)) +  str( "  ") +  str( "probe ") +  str( eh.name) +  str( ": ") + str ( s)      )#line 23#line 24#line 25
 
