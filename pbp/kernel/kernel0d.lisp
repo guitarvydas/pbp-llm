@@ -725,7 +725,7 @@ x))))
     (declare (ignorable  d))
     (setf (slot-value  d 'v)  obj)                          #|line 564|#
     (setf (slot-value  d 'clone)  #'(lambda (&optional )(funcall (quote obj_clone)   d  #|line 565|#)))
-    (setf (slot-value  d 'reclaim)  None)                   #|line 566|#
+    (setf (slot-value  d 'reclaim)  nil)                    #|line 566|#
     (let ((mev (funcall (quote make_mevent)   port  d       #|line 567|#)))
       (declare (ignorable mev))
       (funcall (quote put_output)   eh  mev                 #|line 568|#))) #|line 569|#
@@ -883,7 +883,7 @@ x))))
     (declare (ignorable  d))
     (setf (slot-value  d 'v)  "!")                          #|line 705|#
     (setf (slot-value  d 'clone)  #'(lambda (&optional )(funcall (quote obj_clone)   d  #|line 706|#)))
-    (setf (slot-value  d 'reclaim)  None)                   #|line 707|#
+    (setf (slot-value  d 'reclaim)  nil)                    #|line 707|#
     (return-from new_datum_bang  d                          #|line 708|# #|line 709|#))
   )
 #|  This is called `external` due to historical reasons. This has evolved into 2 kinds of Leaf parts: AOT and JIT (statically generated before runtime, vs. dynamically generated at runtime). If a part name begins with ;:', it is treated specially as a JIT part, else the part is assumed to have been pre-loaded into the register in the regular way.  |# #|line 1|# #|line 2|#

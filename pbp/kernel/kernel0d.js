@@ -588,7 +588,7 @@ function send (eh,port,obj,causingMevent) {            /* line 562 */
     let  d =  new Datum ();                            /* line 563 */;
     d.v =  obj;                                        /* line 564 */
     d.clone =  function () {return obj_clone ( d)      /* line 565 */;};
-    d.reclaim =  None;                                 /* line 566 */
+    d.reclaim =  null;                                 /* line 566 */
     let mev = make_mevent ( port, d)                   /* line 567 */;
     put_output ( eh, mev)                              /* line 568 *//* line 569 *//* line 570 */
 }
@@ -719,7 +719,7 @@ function new_datum_bang () {                           /* line 703 */
     let  d =  new Datum ();                            /* line 704 */;
     d.v =  "!";                                        /* line 705 */
     d.clone =  function () {return obj_clone ( d)      /* line 706 */;};
-    d.reclaim =  None;                                 /* line 707 */
+    d.reclaim =  null;                                 /* line 707 */
     return  d                                          /* line 708 *//* line 709 */;
 }
 /*  This is called `external` due to historical reasons. This has evolved into 2 kinds of Leaf parts: AOT and JIT (statically generated before runtime, vs. dynamically generated at runtime). If a part name begins with ;:', it is treated specially as a JIT part, else the part is assumed to have been pre-loaded into the register in the regular way.  *//* line 1 *//* line 2 */
