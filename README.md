@@ -144,3 +144,5 @@ The LLM's answers serve as a mirror reflecting the collective knowledge and bias
 ### Next Steps
 
 This MVI demonstrates that the core loop works as designed. However, it also suggests numerous improvements and new directions: different questioning strategies, alternative problem domains to explore, and ways to better capture and analyze the insights that emerge from this iterative process. The Parts Based Programming approach makes such experimentation straightforward—we can swap components, adjust the flow, and explore variations without rewriting the entire system.
+
+![API](./api.md)

@@ -14,5 +14,8 @@ logged:
 	rm -f out.md out.0.md
 	python main.py . 'is concurrency considered difficult?' logged logged.drawio.json | node ./pbp/kernel/splitoutput.js
 
+llm:
+	(cd agency ; make)
+
 init:
 	npm install yargs prompt-sync ohm-js @xmldom/xmldom
