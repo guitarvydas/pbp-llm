@@ -1,7 +1,7 @@
 # pbp-llm
 Simple example of creating a project using Part Based Programming (PBP).
 
-See video ???.
+See video https://programmingsimplicity.substack.com/p/pbp-llm-automated-problem-discovery?r=1egdky.
 
 Cloned code repositories [pbp-kit](https://github.com/guitarvydas/pbp-kit) and [agency (Go code to access OpenAI api)](https://github.com/guitarvydas/agency), but, used their code is directly included in this project, not used as sub-modules. This pbp-llm repo should be completely stand-alone.
 
